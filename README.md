@@ -1,11 +1,11 @@
-# Capacitor HCE plugin
+# Capacitor Plugin HCE
 
 Host Card Emulation (HCE) Plugin for Capacitor / Ionic on Android/ios. This project is ported and reuse code based from https://github.com/agmo-ios-team/flutter_nfc_hce that forked for Flutter HCE Plugin https://pub.dev/packages/flutter_nfc_hce you can follow the introcuction for thier project
 
 ## Install
 
 ```bash
-npm install capacitor-hce-plugin-int
+npm install capacitor-plugin-hce
 npx cap sync
 ```
 
@@ -56,25 +56,12 @@ npx cap sync
     <string name="aiddescription">aiddescription</string>
     </resources>
     ````
-## Ios Setup 
+
+## iOS Setup 
+
 1) Vajag Pieteikties Apple Ios HCE entitelment. Kad piesakās norādīt AID kā D2760000850101
 2) Pievienot Apple HCE pie sava projekta Xcode
 
-
-## Izmantošana
-
-1) Importēt Galveno Module
-    ````tsx
-   import {NfcEmulation} from 'capacitor-hce-plugin-int';
-    ````
-2) Izmanto kā parastu component, data parametrā ievada vērtību ko grib emulēt kā nfc tag.
-   ````tsx
-    <NfcEmulation data="Hello World!"></NfcEmulation>
-   ````
-3) January pats grib piekļūt visiem API, to var izdarīt importējot HCECapacitorPlugin
-    ````tsx
-   import { HCECapacitorPlugin } from 'capacitor-hce-plugin-int';
-   ````
 ## API
 
 <docgen-index>

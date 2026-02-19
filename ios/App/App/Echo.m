@@ -7,5 +7,5 @@
 
 #import <Foundation/Foundation.h>
 #import <Capacitor/Capacitor.h>
-CAP_PLUGIN(IosEmulator, "HCECapacitorPlugin", CAP_PLUGIN_METHOD(StartIosEmulation,CAPPluginReturnPromise);
+CAP_PLUGIN(IosEmulator, "HCE", CAP_PLUGIN_METHOD(StartIosEmulation,CAPPluginReturnPromise);
            )

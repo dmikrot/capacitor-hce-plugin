@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
-    "jsx": "react-jsx", 
     "allowUnreachableCode": false,
     "declaration": true,
     "esModuleInterop": true,
     "inlineSources": true,
-    "lib": ["dom", "es2017"],
+    "lib": [
+      "dom",
+      "es2017"
+    ],
     "module": "esnext",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
@@ -16,11 +18,8 @@
     "sourceMap": true,
     "strict": true,
     "target": "es2017",
-    "baseUrl": ".",
-
-    "paths": {
-      "@css/*": ["src/css/*"]
-    }
   },
-  "files": ["src/index.ts"]
+  "files": [
+    "src/index.ts"
+  ]
 }

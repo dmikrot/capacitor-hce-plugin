@@ -7,10 +7,10 @@ enum ReaderStatusType {
   CardEmulatorStopped = 'card-emulator-stopped'
 }
 
-export interface HCECapacitorPluginPlugin {
+export interface HCEPlugin {
   StartIosEmulation(options: { Data: string }): Promise<{ Data: string }>;
   addListener(
-    eventName: 'sessionInvalidated' | 'nfcDataComplete'| "IosNotSupported",
+    eventName: 'sessionInvalidated' | 'nfcDataComplete' | "IosNotSupported",
     listener: (event: any) => void
   ): Promise<void>;
 

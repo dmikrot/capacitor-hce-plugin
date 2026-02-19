@@ -16,8 +16,8 @@ import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 
-@CapacitorPlugin(name = "HCECapacitorPlugin")
-class HCECapacitorPluginPlugin : Plugin() {
+@CapacitorPlugin(name = "HCE")
+class HCEPlugin : Plugin() {
     
     private var mNfcAdapter: NfcAdapter? = null
 
