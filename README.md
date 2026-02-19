@@ -68,6 +68,7 @@ npx cap sync
 
 * [`StartIosEmulation(...)`](#startiosemulation)
 * [`addListener('sessionInvalidated' | 'nfcDataComplete' | 'IosNotSupported', ...)`](#addlistenersessioninvalidated--nfcdatacomplete--iosnotsupported-)
+* [`addListener('onStatusChanged', ...)`](#addlisteneronstatuschanged-)
 * [`removeListener(...)`](#removelistener)
 * [`startNfcHce(...)`](#startnfchce)
 * [`stopNfcHce()`](#stopnfchce)
@@ -76,7 +77,6 @@ npx cap sync
 * [`isNfcHceSupported()`](#isnfchcesupported)
 * [`isSecureNfcEnabled()`](#issecurenfcenabled)
 * [`enableApduService(...)`](#enableapduservice)
-* [`addListener('onStatusChanged', ...)`](#addlisteneronstatuschanged-)
 * [Interfaces](#interfaces)
 * [Enums](#enums)
 
@@ -103,13 +103,29 @@ StartIosEmulation(options: { Data: string; }) => Promise<{ Data: string; }>
 ### addListener('sessionInvalidated' | 'nfcDataComplete' | 'IosNotSupported', ...)
 
 ```typescript
-addListener(eventName: 'sessionInvalidated' | 'nfcDataComplete' | "IosNotSupported", listener: (event: any) => void) => Promise<void>
+addListener(eventName: 'sessionInvalidated' | 'nfcDataComplete' | 'IosNotSupported', listener: (event: any) => void) => Promise<void>
 ```
 
 | Param           | Type                                                                        |
 | --------------- | --------------------------------------------------------------------------- |
 | **`eventName`** | <code>'sessionInvalidated' \| 'nfcDataComplete' \| 'IosNotSupported'</code> |
 | **`listener`**  | <code>(event: any) =&gt; void</code>                                        |
+
+--------------------
+
+
+### addListener('onStatusChanged', ...)
+
+```typescript
+addListener(eventName: 'onStatusChanged', listenerFunc: (response: { eventName: ReaderStatusType; }) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+```
+
+| Param              | Type                                                                                                 |
+| ------------------ | ---------------------------------------------------------------------------------------------------- |
+| **`eventName`**    | <code>'onStatusChanged'</code>                                                                       |
+| **`listenerFunc`** | <code>(response: { eventName: <a href="#readerstatustype">ReaderStatusType</a>; }) =&gt; void</code> |
+
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 --------------------
 
@@ -209,22 +225,6 @@ enableApduService(options: { enable: boolean; }) => Promise<{ enabled: boolean; 
 | **`options`** | <code>{ enable: boolean; }</code> |
 
 **Returns:** <code>Promise&lt;{ enabled: boolean; }&gt;</code>
-
---------------------
-
-
-### addListener('onStatusChanged', ...)
-
-```typescript
-addListener(eventName: 'onStatusChanged', listenerFunc: (response: { eventName: ReaderStatusType; }) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
-```
-
-| Param              | Type                                                                                                 |
-| ------------------ | ---------------------------------------------------------------------------------------------------- |
-| **`eventName`**    | <code>'onStatusChanged'</code>                                                                       |
-| **`listenerFunc`** | <code>(response: { eventName: <a href="#readerstatustype">ReaderStatusType</a>; }) =&gt; void</code> |
-
-**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
 
 --------------------
 
